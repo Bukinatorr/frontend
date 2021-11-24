@@ -1,11 +1,12 @@
-{
+module.export = {
   "root": true,
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier", "jsx-conditionals", "jsx/a11y"],
   "extends": [
-    "next/core-web-vitals",
     "airbnb",
     "airbnb-typescript",
-    "airbnb-typescript/base"
+    "airbnb-typescript/base",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended"
   ],
   "parserOptions": {
     "project": "./tsconfig.json"
@@ -19,6 +20,8 @@
     "react/jsx-uses-vars": "error",
     "react/jsx-filename-extension": "off",
     "react/jsx-props-no-spreading": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-indent": "warn",
     "prefer-arrow-callback": "error",
     "arrow-spacing": "warn",
     "func-names": ["error", "as-needed"],
@@ -27,6 +30,6 @@
     "prettier/prettier": ["error"],
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/camelcase": "off",
-    "@typescript-eslint/no-empty-interface": "warn"
+    "@typescript-eslint/no-empty-interface": "warn",
   }
 }
