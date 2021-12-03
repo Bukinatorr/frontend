@@ -1,15 +1,16 @@
-import React from 'react';
 import type { NextPage } from 'next';
-import Header from 'components/layouts/Header';
 import { useQuery } from 'react-query';
-import { Post, usePostsList } from './api/posts';
-import PostCard from 'components/posts/Card';
+import Header from '@components/layouts/Header';
+import PostCard from '@components/posts/Card';
+import { Post } from '@interfaces/post';
+import { usePostsList } from '@api/posts';
 
 const Home: NextPage = () => {
-  const { data: postsList,
+  const {
+    data: postsList,
     isLoading,
     isSuccess,
-  } = useQuery<Post[] | null>('postsList', usePostsList);
+  } = useQuery<Post[]>('postsList', usePostsList);
 
   return (
     <>
