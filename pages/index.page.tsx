@@ -6,8 +6,7 @@ import { Post, usePostsList } from './api/posts';
 import PostCard from 'components/posts/Card';
 
 const Home: NextPage = () => {
-  const {
-    data: postsList,
+  const { data: postsList,
     isLoading,
     isSuccess,
   } = useQuery<Post[] | null>('postsList', usePostsList);
