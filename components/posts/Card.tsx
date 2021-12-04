@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Post } from 'pages/api/posts';
+import { Post } from '@interfaces/post';
 
 interface PostCardProps {
   post: Post;

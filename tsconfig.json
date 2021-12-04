@@ -16,10 +16,11 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@components": ["src/components"],
-      "@api/*": ["src/pages/api/*"],
-      "@config": ["src/pages/constants/config"]
+      "@interfaces/*": ["interfaces/*"],
+      "@components/*": ["components/*"],
+      "@components": ["components"],
+      "@api/*": ["pages/api/*"],
+      "@config": ["pages/constants/config"]
     }
   },
   "include": [
