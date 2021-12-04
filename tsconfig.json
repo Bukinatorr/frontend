@@ -19,7 +19,7 @@
       "@components/*": ["src/components/*"],
       "@components": ["src/components"],
       "@api/*": ["src/pages/api/*"],
-      "@config": ["src/pages/constants/config"],
+      "@config": ["src/pages/constants/config"]
     }
   },
   "include": [

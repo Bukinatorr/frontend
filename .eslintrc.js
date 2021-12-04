@@ -1,35 +1,50 @@
 module.export = {
-  root: true,
-  plugins: ['@typescript-eslint', 'prettier', 'jsx-conditionals', 'jsx/a11y'],
+  env: {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  parser: "@typescript-eslint/parser",
   extends: [
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb-typescript/base',
-    'plugin:jsx-a11y/recommended',
-    'plugin:react/recommended',
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:prettier/recommended"
   ],
-  parserOptions: {
-    project: './tsconfig.json',
+  settings: {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx", ".js"]
+      }
+    }
   },
-  parser: '@typescript-eslint/parser',
+  plugins: ["react", "react-hooks", "prettier"],
   rules: {
-    'no-console': 'error',
-    '@typescript-eslint/no-unused-vars': 'error',
-    '@typescript-eslint/no-explicit-any': 'error',
-    'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error',
-    'react/jsx-filename-extension': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'react/jsx-one-expression-per-line': 'off',
-    'react/jsx-indent': 'warn',
-    'prefer-arrow-callback': 'error',
-    'arrow-spacing': 'warn',
-    'func-names': ['error', 'as-needed'],
-    'arrow-body-style': ['error', 'as-needed'],
-    'implicit-arrow-linebreak': 'off',
-    'prettier/prettier': ['error'],
-    'react/react-in-jsx-scope': 'off',
-    '@typescript-eslint/camelcase': 'off',
-    '@typescript-eslint/no-empty-interface': 'warn',
+    "react/react-in-jsx-scope": 0,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/button-has-type": "off",
+    "react/no-array-index-key": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "no-nested-ternary": 0,
+    "import/no-unresolved": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "import/order": "error",
+    "func-names": ["error", "as-needed"],
+    "arrow-body-style": ["error", "as-needed"]
   },
+  globals: {
+    "React": "writable"
+  }
 };

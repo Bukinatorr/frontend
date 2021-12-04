@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Post } from "pages/api/posts";
+import { Post } from 'pages/api/posts';
 
 interface PostCardProps {
   post: Post;
@@ -27,13 +27,16 @@ const PostCard = ({ post }: PostCardProps) => (
         </a>
         <p className="font-normal text-gray-700 pb-3">{post.body}</p>
         <div className="mt-4 mb-2">
-          <a className="px-4 py-2 rounded-md text-sm font-medium border-0 focus:outline-none focus:ring transition text-blue-600 bg-blue-100 hover:text-blue-800 hover:bg-blue-100 active:bg-blue-200 focus:ring-blue-300" href="#">
+          <a
+            className="px-4 py-2 rounded-md text-sm font-medium border-0 focus:outline-none focus:ring transition text-blue-600 bg-blue-100 hover:text-blue-800 hover:bg-blue-100 active:bg-blue-200 focus:ring-blue-300"
+            href="#"
+          >
             상세 보기
           </a>
         </div>
       </div>
     </div>
   </div>
-)
+);
 
 export default PostCard;
