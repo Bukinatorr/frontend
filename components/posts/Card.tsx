@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Post } from '@interfaces/post';
+import ModalContainer from '@components/common/ModalContainer';
 
 interface PostCardProps {
   post: Post;
@@ -26,6 +27,7 @@ const PostCard = ({ post }: PostCardProps) => (
           </h5>
         </a>
         <p className="font-normal text-gray-700 pb-3">{post.body}</p>
+        <ModalContainer />
         <div className="mt-4 mb-2">
           <a
             className="px-4 py-2 rounded-md text-sm font-medium border-0 focus:outline-none focus:ring transition text-blue-600 bg-blue-100 hover:text-blue-800 hover:bg-blue-100 active:bg-blue-200 focus:ring-blue-300"

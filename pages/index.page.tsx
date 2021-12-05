@@ -19,12 +19,7 @@ const Home: NextPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {postsList &&
             postsList?.map((post: Post, index) => (
-              <>
-                <PostCard key={index} post={post} />
-                <PostCard key={index + 1} post={post} />
-                <PostCard key={index + 2} post={post} />
-                <PostCard key={index + 3} post={post} />
-              </>
+              <PostCard key={index} post={post} />
             ))}
         </div>
       </div>
