@@ -3,7 +3,7 @@ import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 
-const MyApp = function ({ Component, pageProps }: AppProps) {
+const WisotgeApp = function ({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
 
   return (
@@ -15,4 +15,4 @@ const MyApp = function ({ Component, pageProps }: AppProps) {
   );
 };
 
-export default MyApp;
+export default WisotgeApp;

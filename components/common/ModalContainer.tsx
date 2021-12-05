@@ -7,7 +7,7 @@ const ModalContainer = () => {
 
   const handleClick = () => {
     setIsOpen(true);
-  }
+  };
 
   return (
     <>
