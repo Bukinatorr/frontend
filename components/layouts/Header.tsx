@@ -4,12 +4,12 @@ import { SiMinutemailer } from 'react-icons/si';
 
 const Header = () => (
   <>
-    <div className="bg-hero-pattern bg-cover w-full h-56 md:h-80">
+    <div className="bg-hero-pattern opacity-80 bg-cover w-full h-56 md:h-80">
       <div className="container text-center break-normal mx-auto pt-16 md:pt-32">
-        <p className="text-gray-100 font-extrabold text-3xl md:text-5xl">
+        <p className="text-black font-extrabold text-3xl md:text-5xl">
           Wisotge
         </p>
-        <p className="text-xl md:text-2xl text-gray-300 mt-4">
+        <p className="text-xl md:text-2xl text-gray-600 mt-4">
           Welcome to my Blog
         </p>
       </div>
