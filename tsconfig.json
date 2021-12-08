@@ -20,6 +20,8 @@
       "@components/*": ["components/*"],
       "@components": ["components"],
       "@api/*": ["pages/api/*"],
+      "@layout/*": ["layouts/main/*"],
+      "@layout": ["layouts/main"],
       "@config": ["pages/constants/config"]
     }
   },
