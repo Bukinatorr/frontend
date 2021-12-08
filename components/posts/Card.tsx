@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { Post } from '@interfaces/post';
-import ModalContainer from '@components/common/ModalContainer';
 
 interface PostCardProps {
   post: Post;
