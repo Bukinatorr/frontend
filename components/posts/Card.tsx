@@ -8,7 +8,7 @@ interface PostCardProps {
 }
 
 const PostCard = ({ post }: PostCardProps) => (
-  <div key={post.id} className='group relative'>
+  <div key={post.id} className="group relative">
     <Image
       src="/assets/img/post-sample1.png"
       width="1024"

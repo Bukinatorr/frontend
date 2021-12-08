@@ -5,3 +5,7 @@ export const usePostsList = async () => {
 
   return data;
 };
+
+export const usePostCreate = (params?: any) => async () => {
+  return await axios.post('http://localhost:8080/api/v1/posts', params)
+}
