@@ -20,12 +20,16 @@ const Header = () => (
           <ul className="list-reset flex justify-between flex-1 md:flex-none items-center">
             <li className="mr-2">
               <Link href="/">
-                <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2">홈</a>
+                <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2">
+                  홈
+                </a>
               </Link>
             </li>
             <li className="mr-2">
               <Link href="/posts/create">
-                <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2">게시글 작성</a>
+                <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2">
+                  게시글 작성
+                </a>
               </Link>
             </li>
           </ul>
