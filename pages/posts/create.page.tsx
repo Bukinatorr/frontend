@@ -6,12 +6,23 @@ import Main from '@layout';
 import { alertMessage } from 'lib/utils';
 
 const PostCreatePage = () => {
-  const { mutate } = useMutation((formData: any) => {
+  const { mutate } = useMutation(
+    (formData: any) => {
       return axios.post('http://localhost:8080/api/v1/posts', formData);
-    }, {
-    onError: () => { alertMessage({ type: "error", message: "문제가 발생하였습니다." }) },
-    onSuccess: () => { alertMessage({ type: "success", message: "성공적으로 게시글을 생성하였습니다.", path: "/" }) },
-  });
+    },
+    {
+      onError: () => {
+        alertMessage({ type: 'error', message: '문제가 발생하였습니다.' });
+      },
+      onSuccess: () => {
+        alertMessage({
+          type: 'success',
+          message: '성공적으로 게시글을 생성하였습니다.',
+          path: '/',
+        });
+      },
+    },
+  );
 
   const {
     register,
