@@ -7,7 +7,10 @@ interface PostCardProps {
 }
 
 const PostCard = ({ post }: PostCardProps) => (
-  <div key={post.id} className="rounded overflow-hidden shadow-sm border-2 border-gray-50">
+  <div
+    key={post.id}
+    className="rounded overflow-hidden shadow-sm border-2 border-gray-50"
+  >
     <Image
       src="/assets/img/wisotge.png"
       width="1024"
