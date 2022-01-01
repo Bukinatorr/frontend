@@ -1,9 +1,10 @@
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useMutation } from 'react-query';
 import { usePostCreate } from '@api/posts';
 import axios from 'axios';
 import Main from '@layout';
 import { alertMessage } from 'lib/utils';
+import TextEditor from '@components/common/TextEditor';
 
 const PostCreatePage = () => {
   const { mutate } = useMutation(
@@ -27,6 +28,7 @@ const PostCreatePage = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm();
 
@@ -81,22 +83,12 @@ const PostCreatePage = () => {
               >
                 내용
               </label>
-              <textarea
-                id="body"
-                rows={20}
-                className="border rounded-lg py-2 px-4 w-full"
-                defaultValue={''}
-                {...register('body', {
-                  required: '필수 입력 사항입니다',
-                  minLength: {
-                    value: 10,
-                    message: '10글자 이상 입력해주셔야합니다',
-                  },
-                  maxLength: {
-                    value: 1000,
-                    message: '1000자 미만으로 작성해주셔야합니다',
-                  },
-                })}
+              <Controller
+                control={control}
+                name="body"
+                render={() => (
+                  <TextEditor />
+                )}
               />
               <p className="error">{errors.body?.message}</p>
             </div>

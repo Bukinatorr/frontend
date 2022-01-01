@@ -10,7 +10,7 @@ type LayoutProps = {
 };
 
 const Main = (props: LayoutProps) => (
-  <div>
+  <div className='bg-black'>
     <ToastContainer
       draggable
       toastClassName="m-4 min-h-10 rounded-lg"
