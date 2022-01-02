@@ -1,42 +1,53 @@
-import { useState } from 'react';
-import dynamic from 'next/dynamic'
-import { EditorProps } from 'react-draft-wysiwyg'
-import { EditorState } from 'draft-js';
-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import dynamic from "next/dynamic";
+import 'react-quill/dist/quill.snow.css'
 
-const Editor = dynamic<EditorProps>(
-  () => import('react-draft-wysiwyg').then((mod) => mod.Editor),
-  { ssr: false }
-)
+const ReactQuill = dynamic(import('react-quill'), {
+  ssr: false,
+  loading: () => <p>Loading ...</p>,
+})
 
-const TextEditor = () => {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+const modules = {
+  toolbar: [
+    [{ header: '1' }, { header: '2' }, { font: [] }],
+    [{ size: [] }],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    [
+      { list: 'ordered' },
+      { list: 'bullet' },
+      { indent: '-1' },
+      { indent: '+1' },
+    ],
+    ['link', 'image', 'video'],
+    ['clean'],
+  ],
+  clipboard: {
+    matchVisual: false,
+  },
+}
 
-  const onEditorStateChange = (editorState: React.SetStateAction<EditorState>) => {
-    setEditorState(editorState);
-  };
+const formats = [
+  'header',
+  'font',
+  'size',
+  'bold',
+  'italic',
+  'underline',
+  'strike',
+  'blockquote',
+  'list',
+  'bullet',
+  'indent',
+  'link',
+  'image',
+  'video',
+]
 
-  return (
-    <>
-      <Editor
-        wrapperClassName="wrapper-class"
-        editorClassName="editor"
-        toolbarClassName="toolbar-class"
-        toolbar={{
-          list: { inDropdown: true },
-          textAlign: { inDropdown: true },
-          link: { inDropdown: true },
-          history: { inDropdown: false },
-        }} 
-        placeholder="내용을 작성해주세요."
-        localization={{
-          locale: 'ko',
-        }}
-        editorState={editorState}
-        onEditorStateChange={onEditorStateChange}
-      />
-    </>
-  );
+type HandlerFunction = {
+  onChangeHandler: (value: string) => void;
+}
+
+const TextEditor = ({ onChangeHandler }: HandlerFunction) => {
+  return <ReactQuill onChange={(value) => onChangeHandler(value)} modules={modules} formats={formats} theme="snow" />
 }
 
 export default TextEditor;

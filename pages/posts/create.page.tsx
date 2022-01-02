@@ -28,9 +28,18 @@ const PostCreatePage = () => {
   const {
     register,
     handleSubmit,
+    setValue, trigger,
     control,
+    watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: "onChange" });
+
+  console.log(watch());
+
+  const onChangeMyEditor = (value: string) => {
+    setValue("body", value === "<p><br></p>" ? "" : value)
+    trigger("body")
+  }
 
   return (
     <Main>
@@ -61,6 +70,7 @@ const PostCreatePage = () => {
                 type="text"
                 autoComplete="given-name"
                 className="border rounded-lg py-2 px-4 w-full"
+                placeholder='제목을 작성해주세요'
                 {...register('title', {
                   required: '필수 입력 사항입니다',
                   minLength: {
@@ -86,9 +96,7 @@ const PostCreatePage = () => {
               <Controller
                 control={control}
                 name="body"
-                render={() => (
-                  <TextEditor />
-                )}
+                render={() => <TextEditor onChangeHandler={onChangeMyEditor} />}
               />
               <p className="error">{errors.body?.message}</p>
             </div>
