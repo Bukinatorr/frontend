@@ -31,11 +31,8 @@ const PostCreatePage = () => {
     setValue,
     trigger,
     control,
-    watch,
     formState: { errors },
   } = useForm({ mode: 'onChange' });
-
-  console.log(watch());
 
   const onChangeMyEditor = (value: string) => {
     setValue('body', value === '<p><br></p>' ? '' : value);
@@ -98,6 +95,9 @@ const PostCreatePage = () => {
                 control={control}
                 name="body"
                 render={() => <TextEditor onChangeHandler={onChangeMyEditor} />}
+                rules={{
+                  required: '필수 입력 사항입니다',
+                }}
               />
               <p className="error">{errors.body?.message}</p>
             </div>

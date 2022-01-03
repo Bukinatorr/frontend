@@ -53,6 +53,7 @@ const TextEditor = ({ onChangeHandler }: HandlerFunction) => {
       modules={modules}
       formats={formats}
       theme="snow"
+      style={{height: "500px"}}
     />
   );
 };
