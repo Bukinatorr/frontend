@@ -1,10 +1,10 @@
-import dynamic from "next/dynamic";
-import 'react-quill/dist/quill.snow.css'
+import dynamic from 'next/dynamic';
+import 'react-quill/dist/quill.snow.css';
 
 const ReactQuill = dynamic(import('react-quill'), {
   ssr: false,
   loading: () => <p>Loading ...</p>,
-})
+});
 
 const modules = {
   toolbar: [
@@ -23,7 +23,7 @@ const modules = {
   clipboard: {
     matchVisual: false,
   },
-}
+};
 
 const formats = [
   'header',
@@ -40,14 +40,21 @@ const formats = [
   'link',
   'image',
   'video',
-]
+];
 
 type HandlerFunction = {
   onChangeHandler: (value: string) => void;
-}
+};
 
 const TextEditor = ({ onChangeHandler }: HandlerFunction) => {
-  return <ReactQuill onChange={(value) => onChangeHandler(value)} modules={modules} formats={formats} theme="snow" />
-}
+  return (
+    <ReactQuill
+      onChange={value => onChangeHandler(value)}
+      modules={modules}
+      formats={formats}
+      theme="snow"
+    />
+  );
+};
 
 export default TextEditor;
