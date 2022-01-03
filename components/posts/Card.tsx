@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Dompurify from 'dompurify';
 import { Post } from '@interfaces/post';
 
 interface PostCardProps {
@@ -22,7 +23,11 @@ const PostCard = ({ post }: PostCardProps) => (
     <div className="px-4 py-4 border-t-2 border-gray-50">
       <div className="font-bold text-base mb-2 truncate ...">{post.title}</div>
       <p className="text-gray-700 text-sm  h-24 truncate-2-lines ...">
-        {post.body}
+        {process.browser && (
+          <div dangerouslySetInnerHTML={{
+            __html: Dompurify.sanitize(post.body)}} 
+          />
+        )}
       </p>
     </div>
     <div className="px-3 py-2">
