@@ -32,6 +32,13 @@ const Header = () => (
                 </a>
               </Link>
             </li>
+            <li className="mr-2">
+              <Link href="/users/signup">
+                <a className="inline-block text-gray-600 no-underline hover:text-gray-200 hover:underline py-2 px-2">
+                  회원가입
+                </a>
+              </Link>
+            </li>
           </ul>
         </div>
 
