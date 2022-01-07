@@ -24,8 +24,10 @@ const PostCard = ({ post }: PostCardProps) => (
       <div className="font-bold text-base mb-2 truncate ...">{post.title}</div>
       <p className="text-gray-700 text-sm  h-24 truncate-2-lines ...">
         {process.browser && (
-          <div dangerouslySetInnerHTML={{
-            __html: Dompurify.sanitize(post.body)}} 
+          <div
+            dangerouslySetInnerHTML={{
+              __html: Dompurify.sanitize(post.body),
+            }}
           />
         )}
       </p>
