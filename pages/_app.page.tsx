@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import { RecoilRoot } from 'recoil';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 
-const WisotgeApp = function ({ Component, pageProps }: AppProps) {
+const BukinatorApp = function ({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
 
   return (
@@ -18,4 +18,4 @@ const WisotgeApp = function ({ Component, pageProps }: AppProps) {
   );
 };
 
-export default WisotgeApp;
+export default BukinatorApp;
